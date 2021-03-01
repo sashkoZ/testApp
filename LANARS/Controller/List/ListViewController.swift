@@ -228,11 +228,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
                 accountant? = accountants[indexPath.row]
             }
             let accountantCell = self.tableView.dequeueReusableCell(withIdentifier: "accountantCell") as! AccountantTableViewCell
-            accountantCell.nameLabel.text = accountant?.name
-            accountantCell.salaryLabel.text = String(accountant?.salary ?? 0.0) + "$"
-            accountantCell.workplaceNumberLabel.text = String(accountant?.WorkplaceNumber ?? 0)
-            accountantCell.lunchTimeLabel.text = accountant?.LunchTime
-            accountantCell.accountantTypeLabel.text = accountant?.AccountType
+            accountantCell.nameLabel.text = accountants[indexPath.row].name
+            accountantCell.salaryLabel.text = String(accountants[indexPath.row].salary ?? 0.0) + "$"
+            accountantCell.workplaceNumberLabel.text = String(accountants[indexPath.row].WorkplaceNumber ?? 0)
+            accountantCell.lunchTimeLabel.text = accountants[indexPath.row].LunchTime
+            accountantCell.accountantTypeLabel.text = accountants[indexPath.row].AccountType
             accountantCell.object = accountants[indexPath.row]
             accountantCell.delegate = self
             isEdditing ? (accountantCell.deleteAccountant.isHidden = false) : (accountantCell.deleteAccountant.isHidden = true)

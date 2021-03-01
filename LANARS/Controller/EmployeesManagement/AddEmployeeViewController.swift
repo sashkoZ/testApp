@@ -110,13 +110,10 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
                 switch employeeTypeTextField.text {
                 case "Manager":
                     addManager()
-                    print(manager)
                 case "Employee":
                     addEmployee()
-                    print(employee)
                 case "Accountant":
                     addAccountant()
-                    print(accountant)
                 case "":
                     let alert = UIAlertController(title: nil, message: "Please, fulfill the fields.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
