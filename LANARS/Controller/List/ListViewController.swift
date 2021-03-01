@@ -77,10 +77,12 @@ class ListViewController: UIViewController {
     func filterResultsWithSearchString(searchString: String) {
         let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
         let realm = try! Realm()
-
+        if searchString != "" {
         sortedManagers = realm.objects(Manager.self).filter(predicate)
         sortedEmployee = realm.objects(Employee.self).filter(predicate)
         sortedAccountant = realm.objects(Accountant.self).filter(predicate)
+        }
+        
         tableView.reloadData()
     }
 
