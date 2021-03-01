@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountantCell" rowHeight="200" id="h4Z-8U-sq0" customClass="AccountantTableViewCell" customModule="LANARS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h4Z-8U-sq0" id="FU6-wU-2VS">
+                <rect key="frame" x="0.0" y="0.0" width="412" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L3L-TU-t6e">
+                        <rect key="frame" x="15" y="15.5" width="50" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="9Nn-fj-2g1"/>
+                            <constraint firstAttribute="height" constant="50" id="Hx6-bf-x3Z"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYr-uB-fhZ">
+                        <rect key="frame" x="90" y="15" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95m-xN-oJE">
+                        <rect key="frame" x="240" y="15" width="45" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38x-ut-teJ">
+                        <rect key="frame" x="90" y="51" width="48" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-HL-YkZ">
+                        <rect key="frame" x="240" y="51" width="52" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workplace number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1f-9x-F56">
+                        <rect key="frame" x="90" y="87" width="144" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fg-Uh-Ure">
+                        <rect key="frame" x="240" y="87" width="10" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmz-qe-rAK">
+                        <rect key="frame" x="90" y="123" width="85" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13-14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5o8-cj-NUF">
+                        <rect key="frame" x="240" y="123" width="44" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accountant type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ag-E5-VQn">
+                        <rect key="frame" x="90" y="159" width="126" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payroll" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVZ-U9-XyB">
+                        <rect key="frame" x="240" y="159" width="51" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-pV-9Zc">
+                        <rect key="frame" x="24" y="136" width="33" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="l3b-4h-C53"/>
+                            <constraint firstAttribute="width" constant="33" id="pty-ZK-xDn"/>
+                        </constraints>
+                        <state key="normal" image="trash.fill" catalog="system"/>
+                        <connections>
+                            <action selector="deleteAccountant:" destination="h4Z-8U-sq0" eventType="touchUpInside" id="RVG-Ae-h76"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8Ag-E5-VQn" firstAttribute="top" secondItem="nmz-qe-rAK" secondAttribute="bottom" constant="15" id="1hL-FV-uHi"/>
+                    <constraint firstItem="Y4b-HL-YkZ" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="4iX-X2-jUJ"/>
+                    <constraint firstItem="1Fg-Uh-Ure" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="4m7-5L-xbg"/>
+                    <constraint firstItem="hYr-uB-fhZ" firstAttribute="leading" secondItem="L3L-TU-t6e" secondAttribute="trailing" constant="25" id="9hy-2a-ldn"/>
+                    <constraint firstItem="nmz-qe-rAK" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="BRa-wo-SPS"/>
+                    <constraint firstItem="5o8-cj-NUF" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="Iaw-gR-el7"/>
+                    <constraint firstItem="38x-ut-teJ" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="Ieb-OE-Nqb"/>
+                    <constraint firstItem="nmz-qe-rAK" firstAttribute="top" secondItem="a1f-9x-F56" secondAttribute="bottom" constant="15" id="Kcs-gJ-48r"/>
+                    <constraint firstItem="TRT-pV-9Zc" firstAttribute="top" secondItem="L3L-TU-t6e" secondAttribute="bottom" constant="71" id="L1k-I7-RnE"/>
+                    <constraint firstItem="BVZ-U9-XyB" firstAttribute="top" secondItem="5o8-cj-NUF" secondAttribute="bottom" constant="15" id="L4B-o1-eCP"/>
+                    <constraint firstItem="1Fg-Uh-Ure" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="NHM-pa-8q7"/>
+                    <constraint firstItem="Y4b-HL-YkZ" firstAttribute="leading" secondItem="L3L-TU-t6e" secondAttribute="trailing" constant="175" id="NUU-55-Cet"/>
+                    <constraint firstItem="a1f-9x-F56" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="O1n-tX-A2g"/>
+                    <constraint firstItem="L3L-TU-t6e" firstAttribute="leading" secondItem="FU6-wU-2VS" secondAttribute="leading" constant="15" id="ON5-nk-uaq"/>
+                    <constraint firstItem="5o8-cj-NUF" firstAttribute="top" secondItem="1Fg-Uh-Ure" secondAttribute="bottom" constant="15" id="QaD-4L-ZQJ"/>
+                    <constraint firstItem="L3L-TU-t6e" firstAttribute="top" secondItem="FU6-wU-2VS" secondAttribute="top" constant="15" id="R9h-dM-NgY"/>
+                    <constraint firstItem="38x-ut-teJ" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="Uv8-yj-ldo"/>
+                    <constraint firstItem="8Ag-E5-VQn" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="Why-lt-pKc"/>
+                    <constraint firstItem="38x-ut-teJ" firstAttribute="top" secondItem="hYr-uB-fhZ" secondAttribute="bottom" constant="15" id="Wk8-dd-FaS"/>
+                    <constraint firstItem="Y4b-HL-YkZ" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="Ynh-Jh-R1K"/>
+                    <constraint firstItem="a1f-9x-F56" firstAttribute="top" secondItem="38x-ut-teJ" secondAttribute="bottom" constant="15" id="c9s-d5-9c0"/>
+                    <constraint firstItem="1Fg-Uh-Ure" firstAttribute="top" secondItem="Y4b-HL-YkZ" secondAttribute="bottom" constant="15" id="fbT-qv-Un8"/>
+                    <constraint firstItem="a1f-9x-F56" firstAttribute="leading" secondItem="hYr-uB-fhZ" secondAttribute="leading" id="iIw-9c-UOR"/>
+                    <constraint firstItem="95m-xN-oJE" firstAttribute="top" secondItem="FU6-wU-2VS" secondAttribute="top" constant="15" id="ixL-r7-Bhh"/>
+                    <constraint firstItem="95m-xN-oJE" firstAttribute="leading" secondItem="L3L-TU-t6e" secondAttribute="trailing" constant="175" id="nBc-XJ-LxD"/>
+                    <constraint firstItem="BVZ-U9-XyB" firstAttribute="leading" secondItem="95m-xN-oJE" secondAttribute="leading" id="oGa-Xg-a6y"/>
+                    <constraint firstItem="Y4b-HL-YkZ" firstAttribute="top" secondItem="95m-xN-oJE" secondAttribute="bottom" constant="15" id="saG-NH-giL"/>
+                    <constraint firstItem="TRT-pV-9Zc" firstAttribute="leading" secondItem="FU6-wU-2VS" secondAttribute="leadingMargin" constant="4" id="tOH-lc-DXD"/>
+                    <constraint firstItem="hYr-uB-fhZ" firstAttribute="top" secondItem="FU6-wU-2VS" secondAttribute="top" constant="15" id="uka-Le-Uy1"/>
+                    <constraint firstItem="38x-ut-teJ" firstAttribute="leading" secondItem="L3L-TU-t6e" secondAttribute="trailing" constant="25" id="z8v-uk-wmL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="wvK-kA-HEg"/>
+            <connections>
+                <outlet property="accountantTypeLabel" destination="BVZ-U9-XyB" id="cOq-br-bjP"/>
+                <outlet property="deleteAccountant" destination="TRT-pV-9Zc" id="Kgf-7t-IuH"/>
+                <outlet property="lunchTimeLabel" destination="5o8-cj-NUF" id="ldS-0A-fhO"/>
+                <outlet property="nameLabel" destination="95m-xN-oJE" id="CMi-rP-ayL"/>
+                <outlet property="salaryLabel" destination="Y4b-HL-YkZ" id="LoH-MG-gJX"/>
+                <outlet property="workplaceNumberLabel" destination="1Fg-Uh-Ure" id="0Lj-jr-yga"/>
+            </connections>
+            <point key="canvasLocation" x="178.2608695652174" y="72.991071428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_LANARS_LANARSUITests {
+  umbrella header "Pods-LANARS-LANARSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

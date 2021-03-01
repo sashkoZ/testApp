@@ -1,0 +1,887 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		107DB66325EA91C7000E60D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB66225EA91C7000E60D7 /* AppDelegate.swift */; };
+		107DB66525EA91C7000E60D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB66425EA91C7000E60D7 /* SceneDelegate.swift */; };
+		107DB66725EA91C7000E60D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB66625EA91C7000E60D7 /* ViewController.swift */; };
+		107DB66A25EA91C7000E60D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107DB66825EA91C7000E60D7 /* Main.storyboard */; };
+		107DB66D25EA91C7000E60D7 /* LANARS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 107DB66B25EA91C7000E60D7 /* LANARS.xcdatamodeld */; };
+		107DB66F25EA91C8000E60D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 107DB66E25EA91C8000E60D7 /* Assets.xcassets */; };
+		107DB67225EA91C8000E60D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 107DB67025EA91C8000E60D7 /* LaunchScreen.storyboard */; };
+		107DB67D25EA91C9000E60D7 /* LANARSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB67C25EA91C9000E60D7 /* LANARSTests.swift */; };
+		107DB68825EA91C9000E60D7 /* LANARSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB68725EA91C9000E60D7 /* LANARSUITests.swift */; };
+		107DB6B225EAA09E000E60D7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB6B125EAA09E000E60D7 /* TabBarViewController.swift */; };
+		107DB6C225EAA34A000E60D7 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB6C125EAA34A000E60D7 /* GalleryViewController.swift */; };
+		107DB6C725EAA6B7000E60D7 /* Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB6C625EAA6B7000E60D7 /* Management.swift */; };
+		107DB6D525EAA8EC000E60D7 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB6D425EAA8EC000E60D7 /* Employee.swift */; };
+		107DB6DA25EAA8F9000E60D7 /* Accountant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB6D925EAA8F9000E60D7 /* Accountant.swift */; };
+		107DB70E25EABB5A000E60D7 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB70D25EABB5A000E60D7 /* Worker.swift */; };
+		107DB73325EACDAF000E60D7 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107DB73225EACDAF000E60D7 /* AddEmployeeViewController.swift */; };
+		10DF0A8525EBC5B4001593CE /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DF0A8425EBC5B4001593CE /* GalleryCollectionViewCell.swift */; };
+		10FF133A25EC00F2001751D2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF133925EC00F2001751D2 /* ListViewController.swift */; };
+		10FF134825EC09B8001751D2 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF134625EC09B8001751D2 /* EmployeeTableViewCell.swift */; };
+		10FF134925EC09B8001751D2 /* EmployeeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FF134725EC09B8001751D2 /* EmployeeTableViewCell.xib */; };
+		10FF134F25EC09D0001751D2 /* ManagerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF134D25EC09D0001751D2 /* ManagerTableViewCell.swift */; };
+		10FF135025EC09D0001751D2 /* ManagerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FF134E25EC09D0001751D2 /* ManagerTableViewCell.xib */; };
+		10FF135625EC09EF001751D2 /* AccountantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF135425EC09EF001751D2 /* AccountantTableViewCell.swift */; };
+		10FF135725EC09EF001751D2 /* AccountantTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FF135525EC09EF001751D2 /* AccountantTableViewCell.xib */; };
+		10FF137C25EC214E001751D2 /* AddEmployeeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF137B25EC214E001751D2 /* AddEmployeeNavigationViewController.swift */; };
+		169BC07B5C6E04CD46A3780F /* Pods_LANARS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69383939B502A20A7AE7291E /* Pods_LANARS.framework */; };
+		5F133B98BC9ADE5FB231183A /* Pods_LANARS_LANARSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890789CE468CBB349E950A6D /* Pods_LANARS_LANARSUITests.framework */; };
+		E2162646F7847B79FF9B343F /* Pods_LANARSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE50889FB5FAE7DBF10DFBC7 /* Pods_LANARSTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		107DB67925EA91C9000E60D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 107DB65725EA91C7000E60D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 107DB65E25EA91C7000E60D7;
+			remoteInfo = LANARS;
+		};
+		107DB68425EA91C9000E60D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 107DB65725EA91C7000E60D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 107DB65E25EA91C7000E60D7;
+			remoteInfo = LANARS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		048D1A8438722C180626AD45 /* Pods-LANARSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARSTests.release.xcconfig"; path = "Target Support Files/Pods-LANARSTests/Pods-LANARSTests.release.xcconfig"; sourceTree = "<group>"; };
+		107DB65F25EA91C7000E60D7 /* LANARS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANARS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		107DB66225EA91C7000E60D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		107DB66425EA91C7000E60D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		107DB66625EA91C7000E60D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		107DB66925EA91C7000E60D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		107DB66C25EA91C7000E60D7 /* LANARS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LANARS.xcdatamodel; sourceTree = "<group>"; };
+		107DB66E25EA91C8000E60D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		107DB67125EA91C8000E60D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		107DB67325EA91C8000E60D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107DB67825EA91C9000E60D7 /* LANARSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LANARSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		107DB67C25EA91C9000E60D7 /* LANARSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LANARSTests.swift; sourceTree = "<group>"; };
+		107DB67E25EA91C9000E60D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107DB68325EA91C9000E60D7 /* LANARSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LANARSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		107DB68725EA91C9000E60D7 /* LANARSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LANARSUITests.swift; sourceTree = "<group>"; };
+		107DB68925EA91C9000E60D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107DB6B125EAA09E000E60D7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		107DB6C125EAA34A000E60D7 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		107DB6C625EAA6B7000E60D7 /* Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Management.swift; sourceTree = "<group>"; };
+		107DB6D425EAA8EC000E60D7 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		107DB6D925EAA8F9000E60D7 /* Accountant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accountant.swift; sourceTree = "<group>"; };
+		107DB70D25EABB5A000E60D7 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		107DB73225EACDAF000E60D7 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		10DF0A8425EBC5B4001593CE /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		10FF133925EC00F2001751D2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		10FF134625EC09B8001751D2 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		10FF134725EC09B8001751D2 /* EmployeeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeTableViewCell.xib; sourceTree = "<group>"; };
+		10FF134D25EC09D0001751D2 /* ManagerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTableViewCell.swift; sourceTree = "<group>"; };
+		10FF134E25EC09D0001751D2 /* ManagerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagerTableViewCell.xib; sourceTree = "<group>"; };
+		10FF135425EC09EF001751D2 /* AccountantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountantTableViewCell.swift; sourceTree = "<group>"; };
+		10FF135525EC09EF001751D2 /* AccountantTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountantTableViewCell.xib; sourceTree = "<group>"; };
+		10FF137B25EC214E001751D2 /* AddEmployeeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeNavigationViewController.swift; sourceTree = "<group>"; };
+		3244405EF19E525B836C8129 /* Pods-LANARS-LANARSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARS-LANARSUITests.release.xcconfig"; path = "Target Support Files/Pods-LANARS-LANARSUITests/Pods-LANARS-LANARSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		69383939B502A20A7AE7291E /* Pods_LANARS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANARS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		890789CE468CBB349E950A6D /* Pods_LANARS_LANARSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANARS_LANARSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80D834D171DB596FD312813 /* Pods-LANARS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARS.debug.xcconfig"; path = "Target Support Files/Pods-LANARS/Pods-LANARS.debug.xcconfig"; sourceTree = "<group>"; };
+		C0749AB04EA644992764B2F5 /* Pods-LANARS-LANARSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARS-LANARSUITests.debug.xcconfig"; path = "Target Support Files/Pods-LANARS-LANARSUITests/Pods-LANARS-LANARSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE50889FB5FAE7DBF10DFBC7 /* Pods_LANARSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LANARSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9320A26FFECC5137D9039B /* Pods-LANARSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARSTests.debug.xcconfig"; path = "Target Support Files/Pods-LANARSTests/Pods-LANARSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E977E9AA1583115A4DC79B0C /* Pods-LANARS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LANARS.release.xcconfig"; path = "Target Support Files/Pods-LANARS/Pods-LANARS.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		107DB65C25EA91C7000E60D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				169BC07B5C6E04CD46A3780F /* Pods_LANARS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB67525EA91C9000E60D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2162646F7847B79FF9B343F /* Pods_LANARSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB68025EA91C9000E60D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F133B98BC9ADE5FB231183A /* Pods_LANARS_LANARSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		107DB65625EA91C7000E60D7 = {
+			isa = PBXGroup;
+			children = (
+				107DB66125EA91C7000E60D7 /* LANARS */,
+				107DB67B25EA91C9000E60D7 /* LANARSTests */,
+				107DB68625EA91C9000E60D7 /* LANARSUITests */,
+				107DB66025EA91C7000E60D7 /* Products */,
+				259CE0ABE9293BEF812B4B28 /* Frameworks */,
+				F42AA442AC5D497459E2EB19 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		107DB66025EA91C7000E60D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				107DB65F25EA91C7000E60D7 /* LANARS.app */,
+				107DB67825EA91C9000E60D7 /* LANARSTests.xctest */,
+				107DB68325EA91C9000E60D7 /* LANARSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		107DB66125EA91C7000E60D7 /* LANARS */ = {
+			isa = PBXGroup;
+			children = (
+				107DB66225EA91C7000E60D7 /* AppDelegate.swift */,
+				107DB66425EA91C7000E60D7 /* SceneDelegate.swift */,
+				107DB66625EA91C7000E60D7 /* ViewController.swift */,
+				107DB6A825EA9B99000E60D7 /* Model */,
+				107DB6A925EA9BA6000E60D7 /* Controller */,
+				107DB6AD25EA9BD4000E60D7 /* View */,
+				107DB66E25EA91C8000E60D7 /* Assets.xcassets */,
+				107DB67325EA91C8000E60D7 /* Info.plist */,
+				107DB66B25EA91C7000E60D7 /* LANARS.xcdatamodeld */,
+			);
+			path = LANARS;
+			sourceTree = "<group>";
+		};
+		107DB67B25EA91C9000E60D7 /* LANARSTests */ = {
+			isa = PBXGroup;
+			children = (
+				107DB67C25EA91C9000E60D7 /* LANARSTests.swift */,
+				107DB67E25EA91C9000E60D7 /* Info.plist */,
+			);
+			path = LANARSTests;
+			sourceTree = "<group>";
+		};
+		107DB68625EA91C9000E60D7 /* LANARSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				107DB68725EA91C9000E60D7 /* LANARSUITests.swift */,
+				107DB68925EA91C9000E60D7 /* Info.plist */,
+			);
+			path = LANARSUITests;
+			sourceTree = "<group>";
+		};
+		107DB6A825EA9B99000E60D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				107DB6D925EAA8F9000E60D7 /* Accountant.swift */,
+				107DB6D425EAA8EC000E60D7 /* Employee.swift */,
+				107DB6C625EAA6B7000E60D7 /* Management.swift */,
+				107DB70D25EABB5A000E60D7 /* Worker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		107DB6A925EA9BA6000E60D7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				107DB73125EACD85000E60D7 /* EmployeesManagement */,
+				107DB6B825EAA0EC000E60D7 /* Gallery */,
+				107DB6B725EAA0DE000E60D7 /* List */,
+				107DB6B625EAA0CF000E60D7 /* TabBar */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		107DB6AD25EA9BD4000E60D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				107DB66825EA91C7000E60D7 /* Main.storyboard */,
+				107DB67025EA91C8000E60D7 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		107DB6B625EAA0CF000E60D7 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				107DB6B125EAA09E000E60D7 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		107DB6B725EAA0DE000E60D7 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				10FF133925EC00F2001751D2 /* ListViewController.swift */,
+				10FF134625EC09B8001751D2 /* EmployeeTableViewCell.swift */,
+				10FF134725EC09B8001751D2 /* EmployeeTableViewCell.xib */,
+				10FF134D25EC09D0001751D2 /* ManagerTableViewCell.swift */,
+				10FF134E25EC09D0001751D2 /* ManagerTableViewCell.xib */,
+				10FF135425EC09EF001751D2 /* AccountantTableViewCell.swift */,
+				10FF135525EC09EF001751D2 /* AccountantTableViewCell.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		107DB6B825EAA0EC000E60D7 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				107DB6C125EAA34A000E60D7 /* GalleryViewController.swift */,
+				10DF0A8425EBC5B4001593CE /* GalleryCollectionViewCell.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		107DB73125EACD85000E60D7 /* EmployeesManagement */ = {
+			isa = PBXGroup;
+			children = (
+				107DB73225EACDAF000E60D7 /* AddEmployeeViewController.swift */,
+				10FF137B25EC214E001751D2 /* AddEmployeeNavigationViewController.swift */,
+			);
+			path = EmployeesManagement;
+			sourceTree = "<group>";
+		};
+		259CE0ABE9293BEF812B4B28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69383939B502A20A7AE7291E /* Pods_LANARS.framework */,
+				890789CE468CBB349E950A6D /* Pods_LANARS_LANARSUITests.framework */,
+				CE50889FB5FAE7DBF10DFBC7 /* Pods_LANARSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F42AA442AC5D497459E2EB19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A80D834D171DB596FD312813 /* Pods-LANARS.debug.xcconfig */,
+				E977E9AA1583115A4DC79B0C /* Pods-LANARS.release.xcconfig */,
+				C0749AB04EA644992764B2F5 /* Pods-LANARS-LANARSUITests.debug.xcconfig */,
+				3244405EF19E525B836C8129 /* Pods-LANARS-LANARSUITests.release.xcconfig */,
+				DD9320A26FFECC5137D9039B /* Pods-LANARSTests.debug.xcconfig */,
+				048D1A8438722C180626AD45 /* Pods-LANARSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		107DB65E25EA91C7000E60D7 /* LANARS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 107DB68C25EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARS" */;
+			buildPhases = (
+				E725932D532AF87B1226303C /* [CP] Check Pods Manifest.lock */,
+				107DB65B25EA91C7000E60D7 /* Sources */,
+				107DB65C25EA91C7000E60D7 /* Frameworks */,
+				107DB65D25EA91C7000E60D7 /* Resources */,
+				288F0C9555494710141C7A16 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LANARS;
+			productName = LANARS;
+			productReference = 107DB65F25EA91C7000E60D7 /* LANARS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		107DB67725EA91C9000E60D7 /* LANARSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 107DB68F25EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARSTests" */;
+			buildPhases = (
+				2FBE5B6D9B2BACE39997D06E /* [CP] Check Pods Manifest.lock */,
+				107DB67425EA91C9000E60D7 /* Sources */,
+				107DB67525EA91C9000E60D7 /* Frameworks */,
+				107DB67625EA91C9000E60D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				107DB67A25EA91C9000E60D7 /* PBXTargetDependency */,
+			);
+			name = LANARSTests;
+			productName = LANARSTests;
+			productReference = 107DB67825EA91C9000E60D7 /* LANARSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		107DB68225EA91C9000E60D7 /* LANARSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 107DB69225EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARSUITests" */;
+			buildPhases = (
+				B50B740F287C799A73111A77 /* [CP] Check Pods Manifest.lock */,
+				107DB67F25EA91C9000E60D7 /* Sources */,
+				107DB68025EA91C9000E60D7 /* Frameworks */,
+				107DB68125EA91C9000E60D7 /* Resources */,
+				34578CAC5BDD49932DCE982F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				107DB68525EA91C9000E60D7 /* PBXTargetDependency */,
+			);
+			name = LANARSUITests;
+			productName = LANARSUITests;
+			productReference = 107DB68325EA91C9000E60D7 /* LANARSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		107DB65725EA91C7000E60D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					107DB65E25EA91C7000E60D7 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					107DB67725EA91C9000E60D7 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 107DB65E25EA91C7000E60D7;
+					};
+					107DB68225EA91C9000E60D7 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 107DB65E25EA91C7000E60D7;
+					};
+				};
+			};
+			buildConfigurationList = 107DB65A25EA91C7000E60D7 /* Build configuration list for PBXProject "LANARS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 107DB65625EA91C7000E60D7;
+			productRefGroup = 107DB66025EA91C7000E60D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				107DB65E25EA91C7000E60D7 /* LANARS */,
+				107DB67725EA91C9000E60D7 /* LANARSTests */,
+				107DB68225EA91C9000E60D7 /* LANARSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		107DB65D25EA91C7000E60D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10FF135025EC09D0001751D2 /* ManagerTableViewCell.xib in Resources */,
+				10FF134925EC09B8001751D2 /* EmployeeTableViewCell.xib in Resources */,
+				10FF135725EC09EF001751D2 /* AccountantTableViewCell.xib in Resources */,
+				107DB67225EA91C8000E60D7 /* LaunchScreen.storyboard in Resources */,
+				107DB66F25EA91C8000E60D7 /* Assets.xcassets in Resources */,
+				107DB66A25EA91C7000E60D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB67625EA91C9000E60D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB68125EA91C9000E60D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		288F0C9555494710141C7A16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LANARS/Pods-LANARS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LANARS/Pods-LANARS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LANARS/Pods-LANARS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FBE5B6D9B2BACE39997D06E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LANARSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34578CAC5BDD49932DCE982F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LANARS-LANARSUITests/Pods-LANARS-LANARSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LANARS-LANARSUITests/Pods-LANARS-LANARSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LANARS-LANARSUITests/Pods-LANARS-LANARSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B50B740F287C799A73111A77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LANARS-LANARSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E725932D532AF87B1226303C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LANARS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		107DB65B25EA91C7000E60D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10FF135625EC09EF001751D2 /* AccountantTableViewCell.swift in Sources */,
+				107DB6C725EAA6B7000E60D7 /* Management.swift in Sources */,
+				107DB6D525EAA8EC000E60D7 /* Employee.swift in Sources */,
+				10FF134F25EC09D0001751D2 /* ManagerTableViewCell.swift in Sources */,
+				10FF137C25EC214E001751D2 /* AddEmployeeNavigationViewController.swift in Sources */,
+				107DB66D25EA91C7000E60D7 /* LANARS.xcdatamodeld in Sources */,
+				107DB6DA25EAA8F9000E60D7 /* Accountant.swift in Sources */,
+				107DB66725EA91C7000E60D7 /* ViewController.swift in Sources */,
+				10FF133A25EC00F2001751D2 /* ListViewController.swift in Sources */,
+				107DB73325EACDAF000E60D7 /* AddEmployeeViewController.swift in Sources */,
+				10FF134825EC09B8001751D2 /* EmployeeTableViewCell.swift in Sources */,
+				107DB6C225EAA34A000E60D7 /* GalleryViewController.swift in Sources */,
+				10DF0A8525EBC5B4001593CE /* GalleryCollectionViewCell.swift in Sources */,
+				107DB66325EA91C7000E60D7 /* AppDelegate.swift in Sources */,
+				107DB6B225EAA09E000E60D7 /* TabBarViewController.swift in Sources */,
+				107DB70E25EABB5A000E60D7 /* Worker.swift in Sources */,
+				107DB66525EA91C7000E60D7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB67425EA91C9000E60D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				107DB67D25EA91C9000E60D7 /* LANARSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		107DB67F25EA91C9000E60D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				107DB68825EA91C9000E60D7 /* LANARSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		107DB67A25EA91C9000E60D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 107DB65E25EA91C7000E60D7 /* LANARS */;
+			targetProxy = 107DB67925EA91C9000E60D7 /* PBXContainerItemProxy */;
+		};
+		107DB68525EA91C9000E60D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 107DB65E25EA91C7000E60D7 /* LANARS */;
+			targetProxy = 107DB68425EA91C9000E60D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		107DB66825EA91C7000E60D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				107DB66925EA91C7000E60D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		107DB67025EA91C8000E60D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				107DB67125EA91C8000E60D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		107DB68A25EA91C9000E60D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		107DB68B25EA91C9000E60D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		107DB68D25EA91C9000E60D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A80D834D171DB596FD312813 /* Pods-LANARS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHSZY3CY8J;
+				INFOPLIST_FILE = LANARS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		107DB68E25EA91C9000E60D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E977E9AA1583115A4DC79B0C /* Pods-LANARS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHSZY3CY8J;
+				INFOPLIST_FILE = LANARS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		107DB69025EA91C9000E60D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD9320A26FFECC5137D9039B /* Pods-LANARSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LANARSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app.LANARSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LANARS.app/LANARS";
+			};
+			name = Debug;
+		};
+		107DB69125EA91C9000E60D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 048D1A8438722C180626AD45 /* Pods-LANARSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LANARSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app.LANARSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LANARS.app/LANARS";
+			};
+			name = Release;
+		};
+		107DB69325EA91C9000E60D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0749AB04EA644992764B2F5 /* Pods-LANARS-LANARSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LANARSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app.LANARSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LANARS;
+			};
+			name = Debug;
+		};
+		107DB69425EA91C9000E60D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3244405EF19E525B836C8129 /* Pods-LANARS-LANARSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LANARSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sashko.app.LANARSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LANARS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		107DB65A25EA91C7000E60D7 /* Build configuration list for PBXProject "LANARS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107DB68A25EA91C9000E60D7 /* Debug */,
+				107DB68B25EA91C9000E60D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		107DB68C25EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107DB68D25EA91C9000E60D7 /* Debug */,
+				107DB68E25EA91C9000E60D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		107DB68F25EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107DB69025EA91C9000E60D7 /* Debug */,
+				107DB69125EA91C9000E60D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		107DB69225EA91C9000E60D7 /* Build configuration list for PBXNativeTarget "LANARSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107DB69325EA91C9000E60D7 /* Debug */,
+				107DB69425EA91C9000E60D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		107DB66B25EA91C7000E60D7 /* LANARS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				107DB66C25EA91C7000E60D7 /* LANARS.xcdatamodel */,
+			);
+			currentVersion = 107DB66C25EA91C7000E60D7 /* LANARS.xcdatamodel */;
+			path = LANARS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 107DB65725EA91C7000E60D7 /* Project object */;
+}
