@@ -50,12 +50,12 @@ class ListViewController: UIViewController {
 
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.searchBar.sizeToFit()
         searchController.searchBar.tintColor = .white
         searchController.searchBar.delegate = self
-        searchView.addSubview(searchController.searchBar)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.definesPresentationContext = true
+        searchView.addSubview(searchController.searchBar)
+        searchController.searchBar.sizeToFit()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +68,27 @@ class ListViewController: UIViewController {
     @IBAction func addEmployee(_ sender: Any) {
     }
 
+    //
+
+    // MARK: - Search
+
+    //
+
+    func filterResultsWithSearchString(searchString: String) {
+        let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
+        let realm = try! Realm()
+
+        sortedManagers = realm.objects(Manager.self).filter(predicate)
+        sortedEmployee = realm.objects(Employee.self).filter(predicate)
+        sortedAccountant = realm.objects(Accountant.self).filter(predicate)
+        tableView.reloadData()
+    }
+
+    //
+
+    // MARK: - Entities E/D
+
+    //
     @IBAction func editEmployees(_ sender: Any) {
         if isEdditing {
             isEdditing = false
@@ -88,22 +109,6 @@ class ListViewController: UIViewController {
         }
     }
 
-    //
-
-    // MARK: - Search
-
-    //
-
-    func filterResultsWithSearchString(searchString: String) {
-        let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
-        let realm = try! Realm()
-
-        sortedManagers = realm.objects(Manager.self).filter(predicate)
-        sortedEmployee = realm.objects(Employee.self).filter(predicate)
-        sortedAccountant = realm.objects(Accountant.self).filter(predicate)
-        tableView.reloadData()
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editSegue" {
             let nav = segue.destination as! UINavigationController
@@ -114,15 +119,15 @@ class ListViewController: UIViewController {
             let indexPath = tableView.indexPathForSelectedRow
 
             if searchController.isActive {
-                let searchResultsController = searchController.searchResultsController as! ListViewController
-                let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow
-                switch indexPathSearch?.section {
+                //let searchResultsController = searchController.searchResultsController as! ListViewController
+                //let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow
+                switch indexPath?.section {
                 case 0:
-                    selectedManager = sortedManagers[indexPathSearch!.row]
+                    selectedManager = sortedManagers[indexPath!.row]
                 case 1:
-                    selectedEmployee = sortedEmployee[indexPathSearch!.row]
+                    selectedEmployee = sortedEmployee[indexPath!.row]
                 case 2:
-                    selectedAccountant = sortedAccountant[indexPathSearch!.row]
+                    selectedAccountant = sortedAccountant[indexPath!.row]
                 case .none:
                     return
                 case .some:
@@ -149,6 +154,11 @@ class ListViewController: UIViewController {
         }
     }
 }
+//
+
+// MARK: - TableView setup
+
+//
 
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -187,30 +197,42 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 manager = managers[indexPath.row]
             }
-            managerCell.nameLabel.text = managers[indexPath.row].name
-            managerCell.salaryLabel.text = String(managers[indexPath.row].salary) + "$"
-            managerCell.receptionTimeLabel.text = managers[indexPath.row].ReceptionHours
+            managerCell.nameLabel.text = manager?.name
+            managerCell.salaryLabel.text = String(manager?.salary ?? 0.0) + "$"
+            managerCell.receptionTimeLabel.text = manager?.ReceptionHours
             managerCell.object = managers[indexPath.row]
             managerCell.delegate = self
             isEdditing ? (managerCell.deleteButton.isHidden = false) : (managerCell.deleteButton.isHidden = true)
             return managerCell
         case 1:
             let employeeCell = self.tableView.dequeueReusableCell(withIdentifier: "employeeCell") as! EmployeeTableViewCell
-            employeeCell.nameLabel.text = employees[indexPath.row].name
-            employeeCell.salaryLabel.text = String(employees[indexPath.row].salary) + "$"
-            employeeCell.workplaceNumberLabel.text = String(employees[indexPath.row].WorkplaceNumber)
-            employeeCell.lunchTimeLabel.text = employees[indexPath.row].LunchTime
+            var employee: Employee?
+            if isFiltering {
+                employee = sortedEmployee[indexPath.row]
+            } else {
+                employee = employees[indexPath.row]
+            }
+            employeeCell.nameLabel.text = employee?.name
+            employeeCell.salaryLabel.text = String(employee?.salary ?? 0.0) + "$"
+            employeeCell.workplaceNumberLabel.text = String(employee?.WorkplaceNumber ?? 0)
+            employeeCell.lunchTimeLabel.text = employee?.LunchTime
             employeeCell.object = employees[indexPath.row]
             employeeCell.delegate = self
             isEdditing ? (employeeCell.deleteButton.isHidden = false) : (employeeCell.deleteButton.isHidden = true)
             return employeeCell
         case 2:
+            var accountant: Accountant?
+            if isFiltering {
+                accountant = sortedAccountant[indexPath.row]
+            } else {
+                accountant? = accountants[indexPath.row]
+            }
             let accountantCell = self.tableView.dequeueReusableCell(withIdentifier: "accountantCell") as! AccountantTableViewCell
-            accountantCell.nameLabel.text = accountants[indexPath.row].name
-            accountantCell.salaryLabel.text = String(accountants[indexPath.row].salary) + "$"
-            accountantCell.workplaceNumberLabel.text = String(accountants[indexPath.row].WorkplaceNumber)
-            accountantCell.lunchTimeLabel.text = accountants[indexPath.row].LunchTime
-            accountantCell.accountantTypeLabel.text = accountants[indexPath.row].AccountType
+            accountantCell.nameLabel.text = accountant?.name
+            accountantCell.salaryLabel.text = String(accountant?.salary ?? 0.0) + "$"
+            accountantCell.workplaceNumberLabel.text = String(accountant?.WorkplaceNumber ?? 0)
+            accountantCell.lunchTimeLabel.text = accountant?.LunchTime
+            accountantCell.accountantTypeLabel.text = accountant?.AccountType
             accountantCell.object = accountants[indexPath.row]
             accountantCell.delegate = self
             isEdditing ? (accountantCell.deleteAccountant.isHidden = false) : (accountantCell.deleteAccountant.isHidden = true)

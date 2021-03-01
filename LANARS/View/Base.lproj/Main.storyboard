@@ -139,7 +139,7 @@
                                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="b7e-Im-27Z">
                                             <connections>
                                                 <action selector="addEmployee:" destination="X5J-vz-oTX" id="jRi-cA-5CL"/>
-                                                <segue destination="RxU-Kp-ITu" kind="show" identifier="" id="Z35-2H-kwT"/>
+                                                <segue destination="RxU-Kp-ITu" kind="showDetail" identifier="" id="Z35-2H-kwT"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

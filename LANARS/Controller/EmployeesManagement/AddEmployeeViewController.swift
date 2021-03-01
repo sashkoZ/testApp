@@ -99,40 +99,23 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
         view.endEditing(true)
     }
 
+    //
+
+    // MARK: - Add Entities
+
+    //
     @objc func save() {
         if (manag == nil) && (account == nil) && (empl == nil) {
-            let alert = UIAlertController(title: "Success!", message: "New worker successfully added.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                self.dismiss(animated: true, completion: nil)
-            }))
             try! realm.write {
                 switch employeeTypeTextField.text {
                 case "Manager":
-                    let newManager = Manager()
-                    newManager.name = nameTextField.text ?? "Name "
-                    newManager.salary = Double(salaryTextField.text ?? "") ?? 0.0
-                    newManager.ReceptionHours = recepcionHoursTextField.text ?? "0-0"
-                    realm.add(newManager)
-                    self.present(alert, animated: true)
+                    addManager()
                     print(manager)
                 case "Employee":
-                    let newEmployee = Employee()
-                    newEmployee.name = nameTextField.text ?? "Name"
-                    newEmployee.salary = Double(salaryTextField.text ?? "") ?? 0.0
-                    newEmployee.LunchTime = lunchTimeTextLabel.text ?? "0-0"
-                    newEmployee.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
-                    realm.add(newEmployee)
-                    self.present(alert, animated: true)
+                    addEmployee()
                     print(employee)
                 case "Accountant":
-                    let newAccountant = Accountant()
-                    newAccountant.name = nameTextField.text ?? "Name"
-                    newAccountant.salary = Double(salaryTextField.text ?? " ") ?? 0.0
-                    newAccountant.AccountType = accountantTypeTextField.text ?? "none"
-                    newAccountant.LunchTime = lunchTimeTextLabel.text ?? "0-0"
-                    newAccountant.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
-                    realm.add(newAccountant)
-                    self.present(alert, animated: true)
+                    addAccountant()
                     print(accountant)
                 case "":
                     let alert = UIAlertController(title: nil, message: "Please, fulfill the fields.", preferredStyle: .alert)
@@ -144,21 +127,101 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
                     return
                 }
             }
-        } else if employeeTypeTextField.text == "Manager" {
+        }
+        if (employeeTypeTextField.text == "Manager") && (manag != nil) {
             updateManager()
-        } else if employeeTypeTextField.text == "Employee" {
+        } else if (employeeTypeTextField.text == "Employee") && (manag != nil) {
+            try! realm.write {
+                realm.delete(manag)
+                addEmployee()
+            }
+
+        } else if (employeeTypeTextField.text == "Accountant") && (manag != nil) {
+            try! realm.write {
+                realm.delete(manag)
+                addAccountant()
+            }
+        }
+        if (employeeTypeTextField.text == "Employee") && (empl != nil) {
             updateEmployee()
-        } else if employeeTypeTextField.text == "Accountant" {
+        } else if (employeeTypeTextField.text == "Manager") && (empl != nil) {
+            try! realm.write {
+                realm.delete(empl)
+                addManager()
+            }
+
+        } else if (employeeTypeTextField.text == "Accountant") && (empl != nil) {
+            try! realm.write {
+                realm.delete(empl)
+                addAccountant()
+            }
+        }
+        if (employeeTypeTextField.text == "Accountant") && (account != nil) {
             updateAccountant()
+        } else if (employeeTypeTextField.text == "Manager") && (account != nil) {
+            try! realm.write {
+                realm.delete(account)
+                addManager()
+                addManager()
+            }
+
+        } else if (employeeTypeTextField.text == "Employee") && (account != nil) {
+            try! realm.write {
+                realm.delete(account)
+                addAccountant()
+            }
         }
     }
-    
+
+    func addManager() {
+        let newManager = Manager()
+        newManager.name = nameTextField.text ?? "Name "
+        newManager.salary = Double(salaryTextField.text ?? "") ?? 0.0
+        newManager.ReceptionHours = recepcionHoursTextField.text ?? "0-0"
+        realm.add(newManager)
+        addAlert()
+    }
+
+    func addEmployee() {
+        let newEmployee = Employee()
+        newEmployee.name = nameTextField.text ?? "Name"
+        newEmployee.salary = Double(salaryTextField.text ?? "") ?? 0.0
+        newEmployee.LunchTime = lunchTimeTextLabel.text ?? "0-0"
+        newEmployee.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
+        realm.add(newEmployee)
+        addAlert()
+    }
+
+    func addAccountant() {
+        let newAccountant = Accountant()
+        newAccountant.name = nameTextField.text ?? "Name"
+        newAccountant.salary = Double(salaryTextField.text ?? " ") ?? 0.0
+        newAccountant.AccountType = accountantTypeTextField.text ?? "none"
+        newAccountant.LunchTime = lunchTimeTextLabel.text ?? "0-0"
+        newAccountant.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
+        realm.add(newAccountant)
+        addAlert()
+    }
+
+    //
+
+    // MARK: - Update Entities
+
+    //
     func updatedAlert() {
         let alert = UIAlertController(title: "Success!", message: "User updated.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             self.dismiss(animated: true, completion: nil)
         }))
-        self.present(alert, animated: true)
+        present(alert, animated: true)
+    }
+
+    func addAlert() {
+        let alert = UIAlertController(title: "Success!", message: "New worker successfully added.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        present(alert, animated: true)
     }
 
     func updateManager() {
@@ -171,6 +234,7 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         updatedAlert()
     }
+
     func updateEmployee() {
         let realm = try! Realm()
         try! realm.write {
@@ -183,6 +247,7 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         updatedAlert()
     }
+
     func updateAccountant() {
         let realm = try! Realm()
         try! realm.write {
@@ -197,17 +262,15 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
         updatedAlert()
     }
 
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if manag != nil {
-            updateManager()
-        }
-        return true
-    }
-
     @objc func back() {
         dismiss(animated: true, completion: nil)
     }
 
+    //
+
+    // MARK: - Picker View setup
+
+    //
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
