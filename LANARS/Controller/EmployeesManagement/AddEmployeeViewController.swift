@@ -29,7 +29,6 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     var workerType = ["Manager", "Employee", "Accountant"]
     var accountantType = ["Payroll", "Material"]
-    
 
     let realm = try! Realm()
     lazy var manager: Results<Manager> = { self.realm.objects(Manager.self) }()
@@ -45,67 +44,162 @@ class AddEmployeeViewController: UIViewController, UIPickerViewDataSource, UIPic
         employeeTypeTextField.delegate = self
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(back))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(save))
+
+        if manag != nil {
+            nameTextField.isHidden = false
+            nameLabel.isHidden = false
+            salaryLabel.isHidden = false
+            salaryTextField.isHidden = false
+            recepcionLabel.isHidden = false
+            recepcionHoursTextField.isHidden = false
+            employeeTypeTextField.text = "Manager"
+            nameTextField.text = manag.name
+            salaryTextField.text = String(manag.salary)
+            recepcionHoursTextField.text = manag.ReceptionHours
+        }
+        if empl != nil {
+            nameTextField.isHidden = false
+            nameLabel.isHidden = false
+            salaryLabel.isHidden = false
+            salaryTextField.isHidden = false
+            workplaceNumberLabel.isHidden = false
+            workplaceNumberTextField.isHidden = false
+            lunchTimeTextLabel.isHidden = false
+            lunchTimeLabel.isHidden = false
+            employeeTypeTextField.text = "Employee"
+            nameTextField.text = empl.name
+            salaryTextField.text = String(empl.salary)
+            workplaceNumberTextField.text = String(empl.WorkplaceNumber)
+            lunchTimeTextLabel.text = empl.LunchTime
+        }
+        if account != nil {
+            nameTextField.isHidden = false
+            nameLabel.isHidden = false
+            salaryLabel.isHidden = false
+            salaryTextField.isHidden = false
+            workplaceNumberLabel.isHidden = false
+            workplaceNumberTextField.isHidden = false
+            lunchTimeTextLabel.isHidden = false
+            lunchTimeLabel.isHidden = false
+            accountantTypeTextField.isHidden = false
+            accountantTypeLabel.isHidden = false
+            employeeTypeTextField.text = "Accountant"
+            nameTextField.text = account.name
+            salaryTextField.text = String(account.salary)
+            workplaceNumberTextField.text = String(account.WorkplaceNumber)
+            lunchTimeTextLabel.text = account.LunchTime
+            accountantTypeLabel.text = account.AccountType
+        }
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @objc func save() {
-        let alert = UIAlertController(title: "Success!", message: "New worker successfully added.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            self.dismiss(animated: true, completion: nil)
+        if (manag == nil) && (account == nil) && (empl == nil) {
+            let alert = UIAlertController(title: "Success!", message: "New worker successfully added.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
             }))
-        try! realm.write {
-            switch employeeTypeTextField.text {
-            case "Manager":
-                let newManager = Manager()
-                newManager.name = nameTextField.text ?? "Name "
-                newManager.salary = Double(salaryTextField.text ?? "") ?? 0.0
-                newManager.ReceptionHours = recepcionHoursTextField.text ?? "0-0"
-                realm.add(newManager)
-                self.present(alert, animated: true)
-                print(manager)
-            case "Employee":
-                let newEmployee = Employee()
-                newEmployee.name = nameTextField.text ?? "Name"
-                newEmployee.salary = Double(salaryTextField.text ?? "") ?? 0.0
-                newEmployee.LunchTime = lunchTimeTextLabel.text ?? "0-0"
-                newEmployee.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
-                realm.add(newEmployee)
-                self.present(alert, animated: true)
-                print(employee)
-            case "Accountant":
-                let newAccountant = Accountant()
-                newAccountant.name = nameTextField.text ?? "Name"
-                newAccountant.salary = Double(salaryTextField.text ?? " ") ?? 0.0
-                newAccountant.AccountType = accountantTypeTextField.text ?? "none"
-                newAccountant.LunchTime = lunchTimeTextLabel.text ?? "0-0"
-                newAccountant.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
-                realm.add(newAccountant)
-                self.present(alert, animated: true)
-                print(accountant)
-            case "":
-                let alert = UIAlertController(title: nil, message: "Please, fulfill the fields.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true)
-            case .some:
-                return
-            case .none:
-                return
+            try! realm.write {
+                switch employeeTypeTextField.text {
+                case "Manager":
+                    let newManager = Manager()
+                    newManager.name = nameTextField.text ?? "Name "
+                    newManager.salary = Double(salaryTextField.text ?? "") ?? 0.0
+                    newManager.ReceptionHours = recepcionHoursTextField.text ?? "0-0"
+                    realm.add(newManager)
+                    self.present(alert, animated: true)
+                    print(manager)
+                case "Employee":
+                    let newEmployee = Employee()
+                    newEmployee.name = nameTextField.text ?? "Name"
+                    newEmployee.salary = Double(salaryTextField.text ?? "") ?? 0.0
+                    newEmployee.LunchTime = lunchTimeTextLabel.text ?? "0-0"
+                    newEmployee.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
+                    realm.add(newEmployee)
+                    self.present(alert, animated: true)
+                    print(employee)
+                case "Accountant":
+                    let newAccountant = Accountant()
+                    newAccountant.name = nameTextField.text ?? "Name"
+                    newAccountant.salary = Double(salaryTextField.text ?? " ") ?? 0.0
+                    newAccountant.AccountType = accountantTypeTextField.text ?? "none"
+                    newAccountant.LunchTime = lunchTimeTextLabel.text ?? "0-0"
+                    newAccountant.WorkplaceNumber = Int(workplaceNumberTextField.text ?? " ") ?? 0
+                    realm.add(newAccountant)
+                    self.present(alert, animated: true)
+                    print(accountant)
+                case "":
+                    let alert = UIAlertController(title: nil, message: "Please, fulfill the fields.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                case .some:
+                    return
+                case .none:
+                    return
+                }
             }
+        } else if employeeTypeTextField.text == "Manager" {
+            updateManager()
+        } else if employeeTypeTextField.text == "Employee" {
+            updateEmployee()
+        } else if employeeTypeTextField.text == "Accountant" {
+            updateAccountant()
         }
     }
     
-    func fillTextFields() {
-        nameTextField.text = manag.name
+    func updatedAlert() {
+        let alert = UIAlertController(title: "Success!", message: "User updated.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true)
     }
+
     func updateManager() {
-      let realm = try! Realm()
-        
-      try! realm.write {
-        manag.name = nameTextField.text!
-      }
+        let realm = try! Realm()
+        try! realm.write {
+            manag.name = nameTextField.text ?? "Name"
+            let salary = salaryTextField.text ?? ""
+            manag.salary = (salary as NSString).doubleValue
+            manag.ReceptionHours = recepcionHoursTextField.text ?? "0-0"
+        }
+        updatedAlert()
     }
+    func updateEmployee() {
+        let realm = try! Realm()
+        try! realm.write {
+            empl.name = nameTextField.text ?? "Name"
+            let salary = salaryTextField.text ?? ""
+            empl.salary = (salary as NSString).doubleValue
+            let wpNumber = workplaceNumberTextField.text ?? ""
+            empl.WorkplaceNumber = Int((wpNumber as NSString).intValue)
+            empl.LunchTime = lunchTimeTextLabel.text ?? ""
+        }
+        updatedAlert()
+    }
+    func updateAccountant() {
+        let realm = try! Realm()
+        try! realm.write {
+            account.name = nameTextField.text ?? "Name"
+            let salary = salaryTextField.text ?? ""
+            account.salary = (salary as NSString).doubleValue
+            let wpNumber = workplaceNumberTextField.text ?? ""
+            account.WorkplaceNumber = Int((wpNumber as NSString).intValue)
+            account.LunchTime = lunchTimeTextLabel.text ?? ""
+            account.AccountType = accountantTypeTextField.text ?? ""
+        }
+        updatedAlert()
+    }
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if manag != nil {
-          updateManager()
+            updateManager()
         }
         return true
     }

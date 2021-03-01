@@ -8,7 +8,7 @@
 import RealmSwift
 import UIKit
 
-class ListViewController: UIViewController, UISearchResultsUpdating {
+class ListViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var addBarButton: UIBarButtonItem!
     @IBOutlet var editBarButton: UIBarButtonItem!
@@ -19,13 +19,21 @@ class ListViewController: UIViewController, UISearchResultsUpdating {
 
     var workersArray = ["Manager", "Employee", "Accountant"]
     var isEdditing = false
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
 
     let realm = try! Realm()
     lazy var managers: Results<Manager> = { self.realm.objects(Manager.self).sorted(byKeyPath: "name", ascending: true) }()
     lazy var employees: Results<Employee> = { self.realm.objects(Employee.self).sorted(byKeyPath: "name", ascending: true) }()
     lazy var accountants: Results<Accountant> = { self.realm.objects(Accountant.self).sorted(byKeyPath: "name", ascending: true) }()
-
-    var searchResults = try! Realm().objects(Manager.self)
+    var sortedManagers = try! Realm().objects(Manager.self)
+    var sortedEmployee = try! Realm().objects(Employee.self)
+    var sortedAccountant = try! Realm().objects(Accountant.self)
     var searchController: UISearchController!
 
     let NibManagerCell = UINib(nibName: "ManagerTableViewCell", bundle: nil)
@@ -40,16 +48,21 @@ class ListViewController: UIViewController, UISearchResultsUpdating {
         tableView.register(NibEmployeeCell, forCellReuseIdentifier: "employeeCell")
         tableView.register(NibAccountantCell, forCellReuseIdentifier: "accountantCell")
 
-        searchController = UISearchController()
+        searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.searchBar.sizeToFit()
         searchController.searchBar.tintColor = .white
         searchController.searchBar.delegate = self
         searchView.addSubview(searchController.searchBar)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.definesPresentationContext = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        isEdditing = false
+        searchViewHeight.constant = 0
+        tableViewTopDistanceHeight.constant = 0
     }
 
     @IBAction func addEmployee(_ sender: Any) {
@@ -74,44 +87,66 @@ class ListViewController: UIViewController, UISearchResultsUpdating {
             self.tableView.reloadData()
         }
     }
-    
+
     //
+
     // MARK: - Search
+
     //
 
     func filterResultsWithSearchString(searchString: String) {
         let predicate = NSPredicate(format: "name BEGINSWITH [c]%@", searchString)
-        if searchString != "" {
         let realm = try! Realm()
-        searchResults = realm.objects(Manager.self).filter(predicate)
-        }
-    }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        let searchString = searchController.searchBar.text!
-        filterResultsWithSearchString(searchString: searchString)
-
-        self.tableView.reloadData()
+        sortedManagers = realm.objects(Manager.self).filter(predicate)
+        sortedEmployee = realm.objects(Employee.self).filter(predicate)
+        sortedAccountant = realm.objects(Accountant.self).filter(predicate)
+        tableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nav = segue.destination as! UINavigationController
-        let svc = nav.topViewController as! AddEmployeeViewController
-        
+        if segue.identifier == "editSegue" {
+            let nav = segue.destination as! UINavigationController
+            let svc = nav.topViewController as! AddEmployeeViewController
             var selectedManager: Manager!
+            var selectedEmployee: Employee?
+            var selectedAccountant: Accountant?
             let indexPath = tableView.indexPathForSelectedRow
-              
+
             if searchController.isActive {
-              let searchResultsController =
-                searchController.searchResultsController as! UITableViewController
-              let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow
-                
-              selectedManager = searchResults[indexPathSearch!.row]
+                let searchResultsController = searchController.searchResultsController as! ListViewController
+                let indexPathSearch = searchResultsController.tableView.indexPathForSelectedRow
+                switch indexPathSearch?.section {
+                case 0:
+                    selectedManager = sortedManagers[indexPathSearch!.row]
+                case 1:
+                    selectedEmployee = sortedEmployee[indexPathSearch!.row]
+                case 2:
+                    selectedAccountant = sortedAccountant[indexPathSearch!.row]
+                case .none:
+                    return
+                case .some:
+                    return
+                }
             } else {
-             // selectedManager = managers[indexPath!.row]
+                switch indexPath?.section {
+                case 0:
+                    selectedManager = managers[indexPath!.row]
+                case 1:
+                    selectedEmployee = employees[indexPath!.row]
+                case 2:
+                    selectedAccountant = accountants[indexPath!.row]
+                case .none:
+                    return
+                case .some:
+                    return
+                }
             }
-              
+
             svc.manag = selectedManager
+            svc.account = selectedAccountant
+            svc.empl = selectedEmployee
+        }
     }
 }
 
@@ -122,11 +157,23 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return managers.count
+            if isFiltering {
+                return sortedManagers.count
+            } else {
+                return managers.count
+            }
         } else if section == 1 {
-            return employees.count
+            if isFiltering {
+                return sortedEmployee.count
+            } else {
+                return employees.count
+            }
         } else {
-            return accountants.count
+            if isFiltering {
+                return sortedAccountant.count
+            } else {
+                return accountants.count
+            }
         }
     }
 
@@ -134,7 +181,12 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let managerCell = self.tableView.dequeueReusableCell(withIdentifier: "managerCell") as! ManagerTableViewCell
-            let manager = searchController.isActive ? searchResults[indexPath.row] : managers[indexPath.row]
+            var manager: Manager?
+            if isFiltering {
+                manager = sortedManagers[indexPath.row]
+            } else {
+                manager = managers[indexPath.row]
+            }
             managerCell.nameLabel.text = managers[indexPath.row].name
             managerCell.salaryLabel.text = String(managers[indexPath.row].salary) + "$"
             managerCell.receptionTimeLabel.text = managers[indexPath.row].ReceptionHours
@@ -208,10 +260,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
             return header
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "editSegue", sender: self)
-
     }
 }
 
@@ -230,4 +281,13 @@ extension ListViewController: EmployeeDelegate, ManagerDelegate, AccountantDeleg
 }
 
 extension ListViewController: UISearchBarDelegate {
+}
+
+extension ListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchString = searchController.searchBar.text!
+        filterResultsWithSearchString(searchString: searchString)
+
+        // tableView.reloadData()
+    }
 }
